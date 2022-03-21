@@ -1,12 +1,12 @@
 {
-    "id": "io.supernova.documentation-main",
-    "name": "Documentation",
-    "description": "Base Documentation Exporter",
-    "author": "Jiri Trecak",
-    "organization": "Supernova",
+    "id": "nucleus.documentation",
+    "name": "Nucleus Documentation",
+    "description": "Documentation Exporter for Nucleus design system",
+    "author": "Ludek Veprek",
+    "organization": "Nucleus",
     "source_dir": "src",
     "assets_dir": "assets",
-    "version": "1.23",
+    "version": "1.0.0",
     "usesBrands": false,
     "config": {
         "sources": "sources.json",
