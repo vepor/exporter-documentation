@@ -6,7 +6,7 @@
     "organization": "Nucleus",
     "source_dir": "src",
     "assets_dir": "assets",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "usesBrands": false,
     "config": {
         "sources": "sources.json",
