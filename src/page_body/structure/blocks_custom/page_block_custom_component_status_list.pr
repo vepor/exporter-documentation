@@ -1,0 +1,39 @@
+{[ const block = context /]}
+
+{* Get base configuration *}
+{[ let sourceIdentifier = exportConfiguration().componentStatusSourceIdentifier /]}
+{[ let sourceName = exportConfiguration().componentStatusSourceName /]}
+
+{[ if (!sourceIdentifier || !sourceName) ]}
+    <p>Source identifier and source name for health status must be provided. Please add it in settings.</p>
+{[ else ]}
+    {[ let sheetUrl = constructGoogleSheetCSVUrl(sourceIdentifier, sourceName) /]}
+    {[ let data = getNetworkData(sheetUrl) /]}
+    {[ if !data ]}
+        <p>Unable to fetch information about component statuses.</p>
+    {[ else ]}
+        {[ let componentStatusList = constructComponentStatusList(data) /]}
+        {[ if constructComponentStatusList) ]}
+            <table className="table">
+              <thead>
+                <tr>
+                  <th scope="col">Component</th>
+                  <th scope="col">Figma</th>
+                  <th scope="col">React</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                  {[ for componentStatus in componentStatusList ]}
+                      <tr>
+                        <td>{{ token.id) }}</td>
+                        <td>{{ token.figma }}</td>
+                        <td>@{{ token.react }}</td>
+                        <td>@{{ token.healthStatus }}</td>
+                      </tr>
+                  {[/]}
+              </tbody>
+            </table>
+        {[/]}
+    {[/]}
+{[/]}

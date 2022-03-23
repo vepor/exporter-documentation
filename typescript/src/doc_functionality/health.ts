@@ -11,58 +11,8 @@ export function constructGoogleSheetCSVUrl(sourceIdentifier, sourceName): string
     return "https://docs.google.com/spreadsheets/d/" + sourceIdentifier + "/gviz/tq?tqx=out:csv&sheet=" + sourceName
 }
 
-/** Construct block from component health data */
-export function constructDynamicHealthBlock(componentId: string, data: any) {
-    
-    // Use papaparse(r) to parse the google sheet CSV
-    let parsedData = CSVParse.parse(data, {
-        header: true
-    })
-
-    /* Example parsed output:
-
-    {
-        "data":[
-            {
-                "ID": "Button",
-                "Health": "healthy",
-                "Published": "1.1.1990",
-                "Updated": "1.2.1990",
-                "Design URL": "link"
-                "Repository URL": "link"
-                "Information": "Information about the component"
-            }
-        ],
-    */
-
-    // Find the component that has ID equal to component id
-    if (!parsedData) {
-        return undefined
-    }
-
-    for (let component of parsedData.data) {
-        if (component.ID === componentId) {
-            return {
-                properties: {
-                    id: component["ID"],
-                    health: component["Health"],
-                    published: component["Published"],
-                    updated: component["Updated"],
-                    designUrl: component["Design URL"],
-                    repositoryUrl: component["Repository URL"],
-                    documentationUrl: component["Documentation URL"],
-                    info: component["Information"]
-                }
-            }
-        }
-    }
-    
-    return undefined
-}
- 
-
 /** Construct blocks from component health data */
-export function constructDynamicHealthList(data: any) {
+export function constructComponentStatusList(data: any) {
     
     // Use papaparse(r) to parse the google sheet CSV
     let parsedData = CSVParse.parse(data, {
@@ -74,13 +24,11 @@ export function constructDynamicHealthList(data: any) {
     {
         "data":[
             {
-                "ID": "Button",
-                "Health": "healthy",
-                "Published": "1.1.1990",
-                "Updated": "1.2.1990",
-                "Design URL": "link"
-                "Repository URL": "link"
-                "Information": "Information about the component"
+                "Component": "Button",
+                "Figma": "To be done",
+                "Design status": "n/a"",
+                "React": "Released",
+                ... other columns
             }
         ],
     */
@@ -91,36 +39,28 @@ export function constructDynamicHealthList(data: any) {
     }
 
     let components: Array<object> = []
-    let healthy: number = 0
-    let withering: number = 0
-    let dormant: number = 0
 
-    for (let component of parsedData.data) {
+    for (const component of parsedData.data) {
         components.push({
-            id: component["ID"],
-            health: component["Health"],
-            published: component["Published"],
-            updated: component["Updated"],
-            designUrl: component["Design URL"],
-            repositoryUrl: component["Repository URL"],
-            documentationUrl: component["Documentation URL"],
-            info: component["Information"]
+            id: component["Component"],
+            figma: component["Figma"],
+            designStatus: component["Design status"],
+            react: component["React"],
+            reactStatus: component["React status"],
+            healthStatus: component["Health status"],
+            type: component["Type"],
+            note: component["Note"],
+            domain: component["Domain"],
+            identificator: component["Identificator"],
+            hasA11yColors: component["hasA11yColors"],
+            hasResponsivity: component["hasResponsivity"],
+            hasDesignTokens: component["hasDesignTokens"],
+            matchesCodeStandards: component["matchesCodeStandards"],
+            hasUsageGuidelines: component["hasUsageGuidelines"],
+            hasReactDocumentation: component["hasReactDocumentation"],
         })
-        let status = component["Health"]
-        switch (status) {
-            case "healthy": healthy += 1; break
-            case "withering": withering += 1; break
-            case "dormant": dormant += 1; break
-        }
     }
 
-    return {
-        summary: {
-            healthy: healthy,
-            withering: withering,
-            dormant: dormant
-        }, 
-        components: components
-    }
+    return components;
 }
  
