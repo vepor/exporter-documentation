@@ -11,8 +11,8 @@ export function constructGoogleSheetCSVUrl(sourceIdentifier, sourceName): string
     return "https://docs.google.com/spreadsheets/d/" + sourceIdentifier + "/gviz/tq?tqx=out:csv&sheet=" + sourceName
 }
 
-/** Construct blocks from component health data */
-export function constructComponentStatusList(data: any) {
+/** Construct data from component status spreadsheet */
+export function constructComponentOverview(data: any) {
     
     // Use papaparse(r) to parse the google sheet CSV
     let parsedData = CSVParse.parse(data, {

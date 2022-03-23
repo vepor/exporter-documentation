@@ -6,7 +6,7 @@
     "organization": "Nucleus",
     "source_dir": "src",
     "assets_dir": "assets",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "usesBrands": false,
     "config": {
         "sources": "sources.json",
@@ -205,26 +205,6 @@
                 "default": "<link href=\"https:\/\/fonts.googleapis.com\/css2?family=Inter:wght@400;500;700&display=swap\" rel=\"stylesheet\">",
                 "isMultiline": true,
                 "inputType": "code"
-            },
-            {
-                "key": "componentStatusSourceIdentifier",
-                "type": "string",
-                "label": "Component Status Spreadsheet ID",
-                "description": "Spreadsheet identifier that points towards a spreadsheet containing the component statuses.",
-                "category": "Nucleus Specific",
-                "default": "1oPS69mdx6tCk_zKt2YGDICeQDV7yHY2yqTR9IwqItLE",
-                "isMultiline": false,
-                "inputType": "plain"
-            },
-            {
-                "key": "componentStatusSourceName",
-                "type": "string",
-                "label": "Spreadsheet page",
-                "description": "Spreadsheet page that points towards a page inside the spreadsheet containing the component statuses.",
-                "category": "Nucleus Specific",
-                "default": "Component Overview",
-                "isMultiline": false,
-                "inputType": "plain"
             }
         ],
         "blocks": [{
@@ -242,10 +222,10 @@
             }]
         },
         {
-            "key": "nucleus.documentation.component-status-list",
+            "key": "nucleus.documentation.component-overview",
             "category": "Component Blocks",
-            "title": "Component Status list",
-            "description": "Show component statuses information from fetched spreadsheet",
+            "title": "Component Overview",
+            "description": "Show component statuses information from fetched spreadsheet.",
             "icon": "icons/component-health.png",
             "mode": "block",
             "properties": []

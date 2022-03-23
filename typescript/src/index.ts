@@ -4,7 +4,7 @@
 // MARK: - Imports
 
 import {
-    constructComponentStatusList,
+    constructComponentOverview,
     constructGoogleSheetCSVUrl
 } from "./doc_functionality/health"
 import { firstPageFromTop, firstSubgroupOfPage, flattenedPageStructure, nextPage, pageOrGroupActiveInContext, previousPage } from "./doc_functionality/lookup"
@@ -54,7 +54,7 @@ Pulsar.registerFunction("typographyDescription", typographyDescription)
 Pulsar.registerFunction("markdownToHTML", markdownToHTML)
 
 /* Component Health */
-Pulsar.registerFunction("constructComponentStatusList", constructComponentStatusList)
+Pulsar.registerFunction("constructComponentStatusList", constructComponentOverview)
 Pulsar.registerFunction("constructGoogleSheetCSVUrl", constructGoogleSheetCSVUrl)
 
 /* Sandbox */

@@ -4,6 +4,6 @@
 {[ switch block.key ]}
 {[ case "io.supernova.documentation-main.markdown" ]}
     {[ inject "page_block_custom_markdown" context block /]}
-{[ case "nucleus.documentation.component-status-list" ]}
-    {[ inject "page_block_custom_component_status_list" context block /]}
+{[ case "nucleus.documentation.component-overview" ]}
+    {[ inject "page_block_custom_component_overview" context block /]}
 {[/]}
