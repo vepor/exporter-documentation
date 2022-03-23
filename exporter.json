@@ -6,7 +6,7 @@
     "organization": "Nucleus",
     "source_dir": "src",
     "assets_dir": "assets",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "usesBrands": false,
     "config": {
         "sources": "sources.json",
@@ -229,6 +229,29 @@
             "icon": "icons/component-health.png",
             "mode": "block",
             "properties": []
+        },
+        {
+            "key": "nucleus.documentation.section-with-image",
+            "category": "Media Blocks",
+            "title": "Section with image",
+            "description": "Shows image next to a title and description.",
+            "icon": "icons/no-icon.png",
+            "mode": "block",
+            "properties": [{
+                "key": "sectionImage",
+                "type": "image",
+                "label": "Image"
+            },
+            {
+                "key": "title",
+                "type": "string",
+                "label": "Title"
+            },
+            {
+                "key": "description",
+                "type": "string",
+                "label": "Description"
+            }]
         }],
         "blockVariants": {
             "Tabs": [{
