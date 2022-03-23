@@ -6,7 +6,7 @@
     "organization": "Nucleus",
     "source_dir": "src",
     "assets_dir": "assets",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "usesBrands": false,
     "config": {
         "sources": "sources.json",
@@ -244,12 +244,14 @@
             },
             {
                 "key": "title",
+                "default": "",
                 "type": "string",
                 "label": "Title"
             },
             {
                 "key": "description",
                 "type": "string",
+                "default": "",
                 "label": "Description"
             }]
         }],
