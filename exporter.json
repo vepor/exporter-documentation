@@ -241,6 +241,11 @@
                 "key": "logo",
                 "type": "image",
                 "label": "Logo"
+            },
+            {
+                "key": "backgroundColor",
+                "type": "color",
+                "label": "Background Color"
             }]
         },
         {
