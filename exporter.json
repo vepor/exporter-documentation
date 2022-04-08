@@ -231,6 +231,66 @@
             "properties": []
         },
         {
+            "key": "nucleus.documentation.logo-download",
+            "category": "Media Blocks",
+            "title": "Logo Download",
+            "description": "Shows a logo that the user can easily download with a link.",
+            "icon": "icons/no-icon.png",
+            "mode": "block",
+            "properties": [{
+                "key": "logo",
+                "type": "image",
+                "label": "Logo"
+            }]
+        },
+        {
+            "key": "nucleus.documentation.do-dont",
+            "category": "Text Blocks",
+            "title": "Do & Don't",
+            "description": "A block that allows you to specify do, don't or both.",
+            "icon": "icons/no-icon.png",
+            "mode": "block",
+            "properties": [{
+                "key": "do",
+                "default": "",
+                "type": "string",
+                "label": "Do"
+            },
+            {
+                "key": "dont",
+                "default": "",
+                "type": "string",
+                "label": "Don't"
+            }]
+        },
+        {
+            "key": "nucleus.documentation.external-link",
+            "category": "Media Blocks",
+            "title": "External Link",
+            "description": "Shows external link.",
+            "icon": "icons/no-icon.png",
+            "mode": "block",
+            "properties": [{
+                "key": "url",
+                "default": "https://",
+                "type": "string",
+                "label": "URL"
+            },
+            {
+                "key": "title",
+                "default": "",
+                "type": "string",
+                "label": "Title"
+            },
+            {
+                "key": "title",
+                "default": "other",
+                "values": ["react", "github", "storybook", "figma", "other"],
+                "type": "enum",
+                "label": "Type"
+            }]
+        },
+        {
             "key": "nucleus.documentation.section-with-image",
             "category": "Media Blocks",
             "title": "Section with image",
