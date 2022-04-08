@@ -244,7 +244,8 @@
             },
             {
                 "key": "backgroundColor",
-                "type": "color",
+                "type": "string",
+                "default": "",
                 "label": "Background Color"
             }]
         },
