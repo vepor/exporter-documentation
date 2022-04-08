@@ -283,7 +283,7 @@
                 "label": "Title"
             },
             {
-                "key": "title",
+                "key": "type",
                 "default": "other",
                 "values": ["react", "github", "storybook", "figma", "other"],
                 "type": "enum",
