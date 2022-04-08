@@ -244,8 +244,9 @@
             },
             {
                 "key": "backgroundColor",
-                "type": "string",
-                "default": "",
+                "type": "enum",
+                "default": "light",
+                "values": ["light", "dark"],
                 "label": "Background Color"
             }]
         },
